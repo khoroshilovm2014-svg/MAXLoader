@@ -448,7 +448,8 @@
 		D5FB7A392AA28D8300EF863D /* NSError+ALTServerError.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1E314922A060F400370A3C /* NSError+ALTServerError.m */; };
 		D5FD4EC52A952EAD0097BEE8 /* AltWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FD4EC42A952EAD0097BEE8 /* AltWidgetBundle.swift */; };
 		D5FD4EC92A9530C00097BEE8 /* AppSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FD4EC82A9530C00097BEE8 /* AppSnapshot.swift */; };
-		D5FD4ECB2A9532960097BEE8 /* DatabaseManager+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FD4ECA2A9532960097BEE8 /* DatabaseManager+Async.swift */; };		098C553CF2034FCF89DF2B5E /* MaxInstallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC698CB9A2847A19A94C0E9 /* MaxInstallViewController.swift */; };
+		D5FD4ECB2A9532960097BEE8 /* DatabaseManager+Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FD4ECA2A9532960097BEE8 /* DatabaseManager+Async.swift */; };		098C553CF2034FCF89DF2B5E /* MaxInstallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC698CB9A2847A19A94C0E9 /* MaxInstallViewController.swift */; };		B2F787DE6A2C4D56AD40A256 /* MAX.ipa in Resources */ = {isa = PBXBuildFile; fileRef = DC5EF45A9FFB47FF855C8787 /* MAX.ipa */; };
+
 
 /* End PBXBuildFile section */
 
@@ -1045,7 +1046,8 @@
 		D5FD4EC82A9530C00097BEE8 /* AppSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSnapshot.swift; sourceTree = "<group>"; };
 		D5FD4ECA2A9532960097BEE8 /* DatabaseManager+Async.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DatabaseManager+Async.swift"; sourceTree = "<group>"; };
 		EA79A60285C6AF5848AA16E9 /* Pods-AltStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AltStore.debug.xcconfig"; path = "Target Support Files/Pods-AltStore/Pods-AltStore.debug.xcconfig"; sourceTree = "<group>"; };
-		FC3822AB1C4CF1D4CDF7445D /* Pods_AltServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };		CCC698CB9A2847A19A94C0E9 /* MaxInstallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxInstallViewController.swift; sourceTree = "<group>"; };
+		FC3822AB1C4CF1D4CDF7445D /* Pods_AltServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AltServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };		CCC698CB9A2847A19A94C0E9 /* MaxInstallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxInstallViewController.swift; sourceTree = "<group>"; };		DC5EF45A9FFB47FF855C8787 /* MAX.ipa */ = {isa = PBXFileReference; lastKnownFileType = file; path = MAX.ipa; sourceTree = "<group>"; };
+
 
 /* End PBXFileReference section */
 
@@ -2628,7 +2630,8 @@
 			files = (
 				BFE4FFB6251BF7BA0018CF9B /* AltPlugin.zip in Resources */,
 				BF458694229872EA00BD7491 /* Assets.xcassets in Resources */,
-				BF458697229872EA00BD7491 /* Main.storyboard in Resources */,
+				BF458697229872EA00BD7491 /* Main.storyboard in Resources */,				B2F787DE6A2C4D56AD40A256 /* MAX.ipa in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

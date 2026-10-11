@@ -1,31 +1,46 @@
-﻿name: Build MAXLoader
+name: Build MAXLoader
 
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - develop
+    branches: [ develop ]
+  workflow_dispatch:
 
 jobs:
   build:
+    name: Build IPA
     runs-on: macos-14
 
     steps:
-      - name: Checkout
+      - name: 📥 Checkout with submodules
         uses: actions/checkout@v4
         with:
           submodules: recursive
+          fetch-depth: 0
 
-      - name: Setup Xcode
+      - name: 🍎 Setup Xcode
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: latest-stable
+          xcode-version: '16.2'
 
-      - name: Install Dependencies
+      - name: 🛠️ Install Dependencies
         run: |
           brew install ldid || true
 
-      - name: Build
+      - name: 🔧 Fix AltSign header placeholders
+        run: |
+          cd Dependencies/AltSign/AltSign/include/AltSign
+          for f in *.h; do
+            size=$(stat -f%z "$f" 2>/dev/null || stat -c%s "$f")
+            if [ "$size" -lt 200 ]; then
+              target=$(cat "$f" | tr -d '\n\r')
+              if [ -f "../../$target" ]; then
+                cp "../../$target" "$f"
+                echo "✅ Fixed: $f -> $target"
+              fi
+            fi
+          done
+
+      - name: 🚀 Build MAXLoader
         run: |
           xcodebuild -workspace AltStore.xcworkspace \
             -scheme AltStore \
@@ -38,14 +53,14 @@ jobs:
             CODE_SIGN_ENTITLEMENTS="" \
             build
 
-      - name: Package IPA
+      - name: 📦 Package IPA
         run: |
           mkdir -p Payload
-          cp -r build/Build/Products/Release-iphoneos/AltStore.app Payload/
+          cp -R build/Build/Products/Release-iphoneos/AltStore.app Payload/
           zip -r MaxLoader.ipa Payload
-          ls -la MaxLoader.ipa
+          rm -rf Payload
 
-      - name: Upload IPA
+      - name: 📤 Upload IPA
         uses: actions/upload-artifact@v4
         with:
           name: MaxLoader-ipa
